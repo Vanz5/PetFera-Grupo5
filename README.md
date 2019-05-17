@@ -6,7 +6,7 @@ Grupo:
 
 O PetFera é um projeto da disciplina IMD0030 - LINGUAGEM DE PROGRAMAÇÃO I, ministrada pelo Professor Renan Cipriano Moioli do departamento Instituto Metropole Digital, na Universidade Federal do Rio Grande do Norte (UFRN).
 
-O trabalho tem como objetivo implementar um programa para auxiliar o cadastro de animais chamda "Pet Fera".
+O trabalho tem como objetivo implementar um programa para auxiliar o cadastro de animais de uma loja chamada "Pet Fera".
 
 Neste programa o usuario deverá ser capaz de:
   - Cadastro de um novo animal a ser comercializado;
