@@ -1,13 +1,10 @@
 //Adicionar includes necessarios
 
-//Cadastro de Funcionarios
-
-
 // Cadastro de Animais
 
 //Cadastro geral de animais - Todos os tipos precisam passar por aqui
 //Inicialmente deixei como vector no geral e nos especificos, possivel mudança pra map
-void CadastrarAnimal(vector <anfibio_nativo> &anfNat, vector <anfibio_exotico> &anfExo, vector <ave_nativo> &aveNat, vector <ave_exotico> &aveExo, vector <mamifero_nativo> &mamNat, vector <mamifero_exotico> &mamExo, vector <reptil_nativo> &repNat, vector <reptil_exotico> &repExo ){
+void CadastrarAnimal(vector <anfibio_nativo> &anfNat, vector <anfibio_exotico> &anfExo, vector <ave_nativo> &aveNat, vector <ave_exotico> &aveExo, vector <mamifero_nativo> &mamNat, vector <mamifero_exotico> &mamExo, vector <reptil_nativo> &repNat, vector <reptil_exotico> &repExo ){ //adaptar para maps de animais
 	int tipoAnimal;
 	char cont = 's', resposta;
 
@@ -28,23 +25,23 @@ void CadastrarAnimal(vector <anfibio_nativo> &anfNat, vector <anfibio_exotico> &
 		}
 		else{
 			if(tipoAnimal == 1){
-				cadastrarAnfibio(anfNat,anfExo);
+				cadastrar(anfNat,anfExo);
 			}
 			else if(tipoAnimal == 2){
-				cadastrarAve(aveNat,aveExo);
+				cadastrar(aveNat,aveExo);
 			}
 			else if(tipoAnimal == 3){
-				cadastrarMamifero(mamNat,mamExo);
+				cadastrar(mamNat,mamExo);
 			}
 			else if(tipoAnimal == 4){
-				cadastrarReptil(repNat,repExo);
+				cadastrar(repNat,repExo);
 			}
 		}
 	}
 }
 
 //Função especifica para cadastro de anfibios
-void cadastrarAnfibio(vector <anfibio_nativo> &anfNat, vector <anfibio_exotico> &anfExo){
+void cadastrar(vector <anfibio_nativo> &anfNat, vector <anfibio_exotico> &anfExo){
 	int id, totalMudas, ultimaMuda [3], tipoAnimal;
 	string classe, nomeAnimal,nomeCientifico, dieta, veterinario, tratador, nomeBatismo, autorizacao, autorizacaoIBAMA, origem;
 	char sexo, cont = 's';
@@ -133,7 +130,7 @@ void cadastrarAnfibio(vector <anfibio_nativo> &anfNat, vector <anfibio_exotico> 
 }
 
 //Função especifica para cadastro de aves
-void cadastrarAve(vector <ave_nativo> &aveNat, vector <ave_exotico> &aveExo){
+void cadastrar(vector <ave_nativo> &aveNat, vector <ave_exotico> &aveExo){
 	int id;
 	double tamBico, envergadura, tamanho;
 	string classe, nomeAnimal, nomeCientifico, dieta, veterinario, tratador, nomeBatismo, autorizacao, autorizacaoIBAMA, origem;
@@ -221,7 +218,7 @@ void cadastrarAve(vector <ave_nativo> &aveNat, vector <ave_exotico> &aveExo){
 }
 
 //Função especifica para cadastro de mamiferos
-void cadastrarMamifero(vector <mamifero_nativo> &mamNat, vector <mamifero_exotico> &mamExo){
+void cadastrar(vector <mamifero_nativo> &mamNat, vector <mamifero_exotico> &mamExo){
 	int id;
 	double tamanho;
 	string classe, nomeAnimal, nomeCientifico, dieta, veterinario, tratador, nomeBatismo, autorizacao, autorizacaoIBAMA, origem, cor;
@@ -309,7 +306,7 @@ void cadastrarMamifero(vector <mamifero_nativo> &mamNat, vector <mamifero_exotic
 
 
 //Função especifica para cadastro de Repteis
-void cadastrarReptil(vector <reptil_nativo> &repNat, vector <reptil_exotico> &repExo){
+void cadastrar(vector <reptil_nativo> &repNat, vector <reptil_exotico> &repExo){
 	int id;
 	bool venenoso;
 	double tamanho;
@@ -396,5 +393,108 @@ void cadastrarReptil(vector <reptil_nativo> &repNat, vector <reptil_exotico> &re
 				}*/
 			}
 		}
+	}
+}
+
+//Cadastro de Funcionarios
+
+//Função geral
+
+//adaptar para map
+void cadastrarFuncionario (map veterinario, map tratador){
+	int tipoFuncionario;
+	char cont = 's';
+
+	while(cont == 's'){
+		cout<<"O funcionario a ser cadastrado será um veterinario ou um tratador \n 1 - VETERINARIO \n 2 - TRATADOR"<<endl;
+		cin>>tipoFuncionario;
+		if(tipoFuncionario != 1 && tipoFuncionario !=2){
+			cout<<"Tipo de funcionario incorreto! Tente novamente!"<<endl;
+			cont = 's';
+			continue;
+		}
+		else{
+			if(tipoFuncionario == 1){
+				cadastrar(veterinarios);
+			}
+			if(tipoFuncionario == 2){
+				cadastrar(tratadores);
+			}
+		}
+	}
+}
+
+//Função especifica para cadastro de Veterinarios
+
+void cadastrar(map veterinarios){
+	int id,idade;
+	long int cpf;
+	string nome, especialidade, crmv, tipoSang;
+	char fatorRH, cont = 's';
+	unsigned int tamAntigo;
+	tamAntigo = veterinarios.size(); // pegar o tamanho antigo do map veterinarios
+
+	while(cont == 's'){
+			cont = 'n';
+
+			cout<<"Insira o id:"<<endl;
+			cin>>id;
+			cout<<"Insira a nome:"<<endl;
+			cin.ignore();
+			getline(cin,nome);
+			cout<<"Insira o cpf:"<<endl;
+			cin>>cpf;
+			cout<<"Insira a idade:"<<endl;
+			cin>>idade;
+			cout<<"insira o tipo sanguinero:"<<endl;
+			cin>>tipoSang;
+			cout<<"Insira o fator RH:"<<endl;
+			cint>>fatorRH;
+			cout<<"Insira a especialidade:"<<endl;
+			cin.ignore;
+			getline(cin,especialidade);
+			cout<<"Insira o crmv:"<<endl;
+			getline(cin,crmv);
+
+			//confirmar se veterinarios tem nivel de segurança
+
+			//Armazenar pelo map - pesquisar
+	}
+}
+
+//Função especifica para cadastro de Tratadores
+
+void cadastrar(map tratadores){
+	int id,idade, nivelSeg;
+	long int cpf;
+	string nome, especialidade, tipoSang;
+	char fatorRH, cont = 's';
+	unsigned int tamAntigo;
+	tamAntigo = tratadores.size(); // pegar o tamanho antigo do map veterinarios
+
+	while(cont == 's'){
+			cont = 'n';
+
+			cout<<"Insira o id:"<<endl;
+			cin>>id;
+			cout<<"Insira a nome:"<<endl;
+			cin.ignore();
+			getline(cin,nome);
+			cout<<"Insira o cpf:"<<endl;
+			cin>>cpf;
+			cout<<"Insira a idade:"<<endl;
+			cin>>idade;
+			cout<<"insira o tipo sanguinero:"<<endl;
+			cin>>tipoSang;
+			cout<<"Insira o fator RH:"<<endl;
+			cint>>fatorRH;
+			cout<<"Insira a especialidade:"<<endl;
+			cin.ignore;
+			getline(cin,especialidade);
+			cout<<"Insira o nivel de segurança do tratador:"<<endl;
+			cin>>nivelSeg;
+
+
+			//Armazenar pelo map - pesquisar
 	}
 }
