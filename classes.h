@@ -2,6 +2,7 @@
 #define CLASSES_PETFERA
 
 #include <string>
+#include <fstream>
 
 using std::string;
 
@@ -60,6 +61,8 @@ using std::string;
 			Tratador (int _id, string _nome, string _cpf, short int _idade, string _tipo_sanguineo, char _fator_rh, string _especialidade, int _nivel_de_seguranca);
 			Tratador (Tratador &_tratador);
 			~Tratador ();
+
+			friend ofstream& operator << (ofstream &out, Tratador &trat);
 	};
 
 	class Veterinario : public Funcionario {
@@ -82,6 +85,8 @@ using std::string;
 			Veterinario (int _id, string _nome, string _cpf, short int _idade, string _tipo_sanguineo, char _fator_rh, string _especialidade, string _crmv);
 			Veterinario (Veterinario &_veterinario);
 			~Veterinario ();
+
+			friend ofstream& operator << (ofstream &out, Veterinario &vet);
 	};
 
 // CLASSES DOS ANIMAIS (ANIMAL, ANIMAL SILVESTRE, ANIMAL NATIVO E ANIMAL EXÓTICO)
@@ -223,12 +228,16 @@ using std::string;
 		public:
 			AnfibioNativo (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda, string _autorizacao_ibama, string _uf_origem, string _autorizacao);
 			~AnfibioNativo ();
+
+		friend ofstream& operator << (ofstream &out, AnfibioNativo &anfNat);	
 	};
 
 	class AnfibioExotico : public Anfibio, AnimalExotico {
 		public:
 			AnfibioExotico (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda, string _autorizacao_ibama, string _pais_origem);
 			~AnfibioExotico ();
+
+		friend ofstream& operator << (ofstream &out, AnfibioExotico &anfExo);	
 	};
 
 // CLASSES DAS AVES (AVE, AVE NATIVO E AVE EXÓTICO)
@@ -260,12 +269,16 @@ using std::string;
 		public:
 			AveNativo (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, double _tamanho_do_bico_cm, double _envergadura_das_asas, string _autorizacao_ibama, string _uf_origem, string _autorizacao);
 			~AveNativo ();
+		
+		friend ofstream& operator << (ofstream &out, AveNativo &aveNat);
 	};
 
 	class AveExotico : public Ave, AnimalExotico {
 		public:
 			AveExotico (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, double _tamanho_do_bico_cm, double _envergadura_das_asas, string _autorizacao_ibama, string _pais_origem);
 			~AveExotico ();
+	
+		friend ofstream& operator << (ofstream &out, AveExotico &aveExo);
 	};
 
 // CLASSES DOS MAMÍFEROS (MAMÍFERO, MAMÍFERO NATIVO E MAMÍFERO EXÓTICO)
@@ -294,12 +307,16 @@ using std::string;
 		public:
 			MamiferoNativo (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, string _cor_pelo, string _autorizacao_ibama, string _uf_origem, string _autorizacao);
 			~MamiferoNativo ();
+
+		friend ofstream& operator << (ofstream &out, MamiferoNativo &mamNat);
 	};
 
 	class MamiferoExotico : public Mamifero, AnimalExotico {
 		public:
 			MamiferoExotico (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, string _cor_pelo, string _autorizacao_ibama, string _pais_origem);
 			~MamiferoExotico ();
+
+		friend ofstream& operator << (ofstream &out, MamiferoExotico &mamExo);
 	};
 
 // CLASSES DOS RÉPTEIS (RÉPTIL, RÉPTIL NATIVO E RÉPTIL EXÓTICO)
@@ -331,12 +348,16 @@ using std::string;
 		public:
 			ReptilNativo (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, bool _venenoso, string _tipo_veneno, string _autorizacao_ibama, string _uf_origem, string _autorizacao);
 			~ReptilNativo ();
+
+		friend ofstream& operator << (ofstream &out, ReptilNativo &repNat);
 	};
 
 	class ReptilExotico : public Reptil, AnimalExotico {
 		public:
 			ReptilExotico (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, bool _venenoso, string _tipo_veneno, string _autorizacao_ibama, string _pais_origem);
 			~ReptilExotico ();
+
+		friend ofstream& operator << (ofstream &out, ReptilExotico &repExo);
 	};
 
 #endif
