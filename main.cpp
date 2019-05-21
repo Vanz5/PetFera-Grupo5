@@ -3,6 +3,22 @@
 using namespace std;
 
 int menu(){
+
+	map <int,anfibio_nativo> anfNat;
+	map <int, anfibio_exotico> anfExo;
+
+	map <int, ave_nativo> aveNat;
+	map <int, ave_exotico> aveExo;
+
+	map <int,mamifero_nativo> mamNat;
+	map <int,mamifero_exotico> mamExo;
+
+	map <int,reptil_nativo> repNat;
+	map <int,reptil_exotico> repExo;
+	
+	map <int, Veterinarios> veterinarios;
+	map <int, Tratadores> tratadores;
+
 	int opt;
 	cout << "\n************************** MENU ****************************" << endl;
 	cout << "1: Cadastrar novo animal" << endl;
