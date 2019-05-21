@@ -1,0 +1,89 @@
+//Adicionar includes necessarios
+
+// Implementação com a consulta por classe
+
+void consultarClasse(map<int,anfibio_nativo> &anfNat, map<int, anfibio_exotico> &anfExo, map<int, ave_nativo> &aveNat, map<int, ave_exotico> &aveExo, map<int,mamifero_nativo> &mamNat, map<int,mamifero_exotico> &mamExo, map<int,reptil_nativo> &repNat, map<int,reptil_exotico> &repExo){
+	int tipoClasse;
+	char cont = 's',resposta;
+
+	while(cont=='s'){
+		cout<< "Qual será o tipo de animal consultado? \n 1 - anfíbio \n 2 - ave \n 3 - mamífero \n 4 - reptil" <<endl;
+		cin>>tipoAnimal;
+
+		if(tipoClasse !=1 && tipoClasse !=2 && tipoClasse !=3 && tipoClasse !=4){
+			cout<<"Classe de animal incorreta! \n"<<endl;
+			cout<<"\n s - Para sair da consulta \n Aperte qualquer outra tecla para recomeçar"<<endl;
+			cin>>resposta;
+			if(resp == 's'){
+				cont = 'n';
+				break;
+			}
+			cont = 's';
+			continue;
+		}
+		else{
+			if(tipoAnimal == 1){
+				consultar(anfNat,anfExo);
+			}
+			else if(tipoAnimal == 2){
+				consultar(aveNat,aveExo);
+			}
+			else if(tipoAnimal == 3){
+				consultar(mamNat,mamExo);
+			}
+			else if(tipoAnimal == 4){
+				consultar(repNat,repExo);
+			}
+		}
+
+	}
+}
+
+//Função especifica para consulta de anfibios
+void consultar(map<int, anfibio_nativo> &anfNat, map<int, anfibio_exotico> &anfExo){
+	cout<<"\n \n Anfibios Nativos:"<<endl;
+	for(auto it=anfNat.begin(); it != anfNat.end(); it++){
+		cout<<it->second;
+	}
+		cout<<"\n \n Anfibios Exoticos:"<<endl;
+	for(auto it=anfExo.begin(); it != anfExo.end(); it++){
+		cout<<it->second;
+	}
+}
+
+//Função especifica para consulta de aves
+void consultar(map<int, ave_nativo> &aveNat, map<int, ave_exotico> &aveExo){
+	cout<<"\n \n Aves Nativas:"<<endl;
+	for(auto it=aveNat.begin(); it != aveNat.end(); it++){
+		cout<<it->second;
+	}
+		cout<<"\n \n Aves Exoticas:"<<endl;
+	for(auto it=aveExo.begin(); it != aveExo.end(); it++){
+		cout<<it->second;
+	}
+}
+
+//Função especifica para consulta de mamiferos
+void consultar(map<int, mamifero_nativo> &mamNat, map<int, mamifero_exotico> &mamExo){
+	cout<<"\n \n Mamiferos Nativos:"<<endl;
+	for(auto it=mamNat.begin(); it != mamNat.end(); it++){
+		cout<<it->second;
+	}
+		cout<<"\n \n Mamiferos Exoticos:"<<endl;
+	for(auto it=mamExo.begin(); it != mamExo.end(); it++){
+		cout<<it->second;
+	}
+}
+
+
+//Função especifica para consulta de Repteis
+void consultar(map<int, reptil_nativo> &repNat, map<int, reptil_exotico> &repExo){
+	cout<<"\n \n Mamiferos Nativos:"<<endl;
+	for(auto it=repNat.begin(); it != repNat.end(); it++){
+		cout<<it->second;
+	}
+		cout<<"\n \n Mamiferos Exoticos:"<<endl;
+	for(auto it=repExo.begin(); it != repExo.end(); it++){
+		cout<<it->second;
+	}
+}
