@@ -3,7 +3,7 @@
 
 //Passa os dados dos arquivos.txt para seus respectivos maps
 
-void inicializar(map<int,anfibio_nativo> &anfNat, map<int, anfibio_exotico> &anfExo, map<int, ave_nativo> &aveNat, map<int, ave_exotico> &aveExo, map<int,mamifero_nativo> &mamNat, map<int,mamifero_exotico> &mamExo, map<int,reptil_nativo> &repNat, map<int,reptil_exotico> &repExo,map <int, Veterinarios> &veterinarios,map <int, Tratadores> &tratadores){
+void inicializar(map<int,AnfibioNativo> &anfNat, map<int, AnfibioExotico> &anfExo, map<int, AveNativo> &aveNat, map<int, AveExotico> &aveExo, map<int, MamiferoNativo> &mamNat, map<int, MamiferoExotico> &mamExo, map<int, ReptilNativo> &repNat, map<int, ReptilExotico> &repExo,map <int, Veterinario> &veterinarios,map <int, Tratador> &tratadores){
 	int id, totalMudas, idade, veterinario, tratador; 
 	string ultimaMuda, classe, nomeAnimal, nomeCientifico, dieta, nomeBatismo, autorizacao, autorizacaoIBAMA, origem, cor, tipoVeneno, especialidade, crmv, tipoSang, nome, nivelSeg;
 	char sexo, fatorRH;
@@ -46,7 +46,7 @@ void inicializar(map<int,anfibio_nativo> &anfNat, map<int, anfibio_exotico> &anf
 			origem = anfibio[13];
 			autorizacao = anfibio[14]
 
-			anfNat.insert(pair<int, anfibio_nativo>(id, anfibio_nativo(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, totalMudas, ultimaMuda[], autorizacaoIBAMA, origem, autorizacao)));
+			anfNat.insert(pair<int, AnfibioNativo>(id, AnfibioNativo(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, totalMudas, ultimaMuda[], autorizacaoIBAMA, origem, autorizacao)));
 		}
 		appFile.close();
 			
@@ -87,7 +87,7 @@ void inicializar(map<int,anfibio_nativo> &anfNat, map<int, anfibio_exotico> &anf
 			origem = anfibio[13];
 			autorizacao = anfibio[14]
 
-			anfExo.insert(pair<int, anfibio_exotico>(id, anfibio_exotico(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, totalMudas, ultimaMuda[], autorizacaoIBAMA, origem, autorizacao)));
+			anfExo.insert(pair<int, AnfibioExotico>(id, AnfibioExotico(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, totalMudas, ultimaMuda[], autorizacaoIBAMA, origem, autorizacao)));
 		}
 		appFile.close();
 			
@@ -127,7 +127,7 @@ void inicializar(map<int,anfibio_nativo> &anfNat, map<int, anfibio_exotico> &anf
 			origem = ave[13];
 			autorizacao = ave[14]
 
-			aveNat.insert(pair<int, ave_nativo> (id, ave_nativo(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, tamBico, envergadura, autorizacaoIBAMA, origem, autorizacao)));
+			aveNat.insert(pair<int, AveNativo> (id, AveNativo(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, tamBico, envergadura, autorizacaoIBAMA, origem, autorizacao)));
 		}
 		appFile.close();
 			
@@ -168,7 +168,7 @@ void inicializar(map<int,anfibio_nativo> &anfNat, map<int, anfibio_exotico> &anf
 			origem = ave[13];
 			autorizacao = ave[14]
 
-			aveExo.insert(pair<int,ave_exotico>(id, ave_exotico(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, tamBico, envergadura, autorizacaoIBAMA, origem)));
+			aveExo.insert(pair<int, AveExotico>(id, AveExotico(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, tamBico, envergadura, autorizacaoIBAMA, origem)));
 		}
 		appFile.close();
 			
@@ -206,7 +206,7 @@ void inicializar(map<int,anfibio_nativo> &anfNat, map<int, anfibio_exotico> &anf
 			origem = mamifero[12];
 			autorizacao = mamifero[13];
 
-			mamNat.insert(pair<int, mamifero_nativo>(id, mamifero_nativo(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, cor, autorizacaoIBAMA, origem, autorizacao)));
+			mamNat.insert(pair<int, MamiferoNativo>(id, MamiferoNativo(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, cor, autorizacaoIBAMA, origem, autorizacao)));
 		}
 		appFile.close();
 			
@@ -246,7 +246,7 @@ void inicializar(map<int,anfibio_nativo> &anfNat, map<int, anfibio_exotico> &anf
 			origem = mamifero[12];
 			autorizacao = mamifero[13];
 
-			mamExo.insert(pair<int, mamifero_exotico>(id, mamifero_exotico(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, cor, autorizacaoIBAMA, origem)));
+			mamExo.insert(pair<int, MamiferoExotico>(id, MamiferoExotico(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, cor, autorizacaoIBAMA, origem)));
 			}
 		appFile.close();
 			
@@ -285,7 +285,7 @@ void inicializar(map<int,anfibio_nativo> &anfNat, map<int, anfibio_exotico> &anf
 			origem = reptil[13];
 			autorizacao = reptil[14]
 
-			repNat.insert(pair<int, reptil_nativo>(id,reptil_nativo(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, autorizacaoIBAMA, venenoso, tipoVeneno, origem, autorizacao)));
+			repNat.insert(pair<int, ReptilNativo>(id, ReptilNativo(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, autorizacaoIBAMA, venenoso, tipoVeneno, origem, autorizacao)));
 		}
 		appFile.close();
 			
@@ -325,7 +325,7 @@ void inicializar(map<int,anfibio_nativo> &anfNat, map<int, anfibio_exotico> &anf
 			origem = reptil[13];
 			autorizacao = reptil[14]
 
-			repExo.insert(pair<int, reptil_exotico>(id, reptil_exotico(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, autorizacaoIBAMA, venenoso, tipoVeneno, origem)));
+			repExo.insert(pair<int, ReptilExotico>(id, ReptilExotico(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, autorizacaoIBAMA, venenoso, tipoVeneno, origem)));
 		}
 		appFile.close();
 			
@@ -357,7 +357,7 @@ void inicializar(map<int,anfibio_nativo> &anfNat, map<int, anfibio_exotico> &anf
 			especialidade = veterinario[6];
 			crmv = veterinario[7];
 
-			veterinarios.insert(pair<int, veterinarios>(id, veterinarios(id, nome, cpf, idade, tipoSang, fatorRH, especialidade, crmv)));
+			veterinarios.insert(pair<int, Veterinario>(id, Veterinario(id, nome, cpf, idade, tipoSang, fatorRH, especialidade, crmv)));
 			}
 		appFile.close();
 			
@@ -389,7 +389,7 @@ void inicializar(map<int,anfibio_nativo> &anfNat, map<int, anfibio_exotico> &anf
 			especialidade = tratador[6];
 			nivelSeg = tratador[7];
 
-			tratadores.insert(pair<int, tratador>(id, tratador(id, nome cpf, idade, tipoSang, fatorRH, especialidade, nivelSeg)));
+			tratadores.insert(pair<int, Tratador>(id, Tratador(id, nome cpf, idade, tipoSang, fatorRH, especialidade, nivelSeg)));
 			}
 		appFile.close();
 			
