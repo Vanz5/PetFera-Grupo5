@@ -1,4 +1,5 @@
 //Adicionar includes necessarios
+#include "classes.h"
 
 // Implementação com a consulta por classe
 
