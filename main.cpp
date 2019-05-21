@@ -1,11 +1,4 @@
-#include <iostream>
-#include <string>
-#include <map>
-#include <fstream>
-#include <ostream>
 #include "classes.h"
-
-using namespace std;
 
 int menu(){
 	
