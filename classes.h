@@ -42,6 +42,11 @@ using namespace std;
 			string getTipoSanguineo ();
 			char getFatorRH ();
 			string getEspecialidade ();
+		
+			// CONSTRUTOR E DESTRUTOR
+		
+			Funcionario ();
+			~Funcionario ();
 	};
 
 	class Tratador : public Funcionario {
