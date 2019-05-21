@@ -1,4 +1,4 @@
-#include "classes_petfera.h"
+#include "classes.h"
 
 // FUNCIONÁRIO
 
@@ -638,4 +638,70 @@
 		strcpy (pais_origem, _pais_origem);
 	}
 
-	ReptilExotico::~ReptilExotico () {}
+ReptilExotico::~ReptilExotico () {}
+
+//Sobrecarga de operadores
+
+// Escrevendo no arquivo "anfibios_nat.txt".
+ofstream& operator << (ofstream &out, ANFIBIO_NATIVO &anfNat){
+	out << anfNat.getID() << ";" << anfNat.getClasse() << ";" << anfNat.getNomeAnimal() << ";" << anfNat.getNomeCientifico() << ";" << anfNat.getSexo() << ";" << anfNat.getTamanho() << ";" << anfNat.getDieta() << ";" << anfNat.getVeterinario() << ";" << anfNat.getTratador() << ";" << anfNat.getNomeBatismo() << ";" << anfNat.getTotalDeMudas() << ";" << anfNat.getUltimaMuda() << ";" << anfNat.getAutorizacaoIBAMA() << ";" << anfNat.getUFOrigem() << ";" << anfNat.getAutorizacao() << ";" << '\n';
+	return out;
+}
+
+// Escrevendo no arquivo "anfibios_ex.txt".
+ofstream& operator << (ofstream &out, ANFIBIO_EXOTICO &anfExo){
+	out << anfExo.getID() << ";" << anfExo.getClasse() << ";" << anfExo.getNomeAnimal() << ";" << anfExo.getNomeCientifico() << ";" << anfExo.getSexo() << ";" << anfExo.getTamanho() << ";" << anfExo.getDieta() << ";" <<	anfExo.getVeterinario() << ";" << anfExo.getTratador() << ";" << anfExo.getNomeBatismo() << ";" << anfExo.getTotalDeMudas() << ";" << anfExo.getUltimaMuda() << ";" << anfExo.getAutorizacaoIBAMA() << ";" << anfExo.getPaisOrigem() << ";" << anfExo.getAutorizacao() << ";" << '\n';
+	return out;
+}
+
+
+// Escrevendo no arquivo "aves_nat.txt".
+ofstream& operator << (ofstream &out, AVE_NATIVO &aveNat){
+	out << aveNat.getID() << ";" << aveNat.getClasse() << ";" << aveNat.getNomeAnimal() << ";" << aveNat.getNomeCientifico() << ";" << aveNat.getSexo() << ";" << aveNat.getTamanho() << ";" << aveNat.getDieta() << ";" << aveNat.getVeterinario() << ";" << aveNat.getTratador() << ";" << aveNat.getNomeBatismo() << ";"  << aveNat.getTamanhoBico() << ";" << aveNat.getEnvergadura() << ";" << aveNat.getAutorizacaoIBAMA() << ";" << aveNat.getUFOrigem() << ";" << aveNat.getAutorizacao() << ";" << '\n';
+	return out;
+}
+
+// Escrevendo no arquivo "aves_ex.txt".
+ofstream& operator << (ofstream &out, AVE_EXOTICO &aveExo){
+	out << aveExo.getID() << ";" << aveExo.getClasse() << ";" << aveExo.getNomeAnimal() << ";" << aveExo.getNomeCientifico() << ";" << aveExo.getSexo() << ";" << aveExo.getTamanho() << ";" << aveExo.getDieta() << ";" << aveExo.getVeterinario() << ";" << aveExo.getTratador() << ";" << aveExo.getNomeBatismo() << ";"  << aveExo.getTamanhoBico() << ";" << aveExo.getEnvergadura() << ";" << aveExo.getAutorizacaoIBAMA() << ";" << aveExo.getPaisOrigem() << ";" << aveExo.getAutorizacao() << ";" << '\n';
+	return out;
+}
+
+
+// Escrevendo no arquivo "mamiferos_nat.txt".
+ofstream& operator << (ofstream &out, MAMIFERO_NATIVO &mamNat){
+	out << mamNat.getID() << ";" << mamNat.getClasse() << ";"  << mamNat.getNomeAnimal() << ";" << mamNat.getNomeCientifico() << ";" << mamNat.getSexo() << ";" << mamNat.getTamanho() << ";" << mamNat.getDieta() << ";" << mamNat.getVeterinario() << ";" << mamNat.getTratador() << ";" << mamNat.getNomeBatismo() << ";"  << mamNat.getCorPelo() << ";" << mamNat.getAutorizacaoIBAMA() << ";" << mamNat.getUFOrigem() << ";" << mamNat.getAutorizacao() << ";" << '\n';
+	return out;
+}
+
+// Escrevendo no arquivo "mamiferos_ex.txt".
+ofstream& operator << (ofstream &out, MAMIFERO_EXOTICO &mamExo){
+	out << mamExo.getID() << ";" << mamExo.getClasse() << ";" << mamExo.getNomeAnimal() << ";" << mamExo.getNomeCientifico() << ";" << mamExo.getSexo() << ";" << mamExo.getTamanho() << ";" << mamExo.getDieta() << ";" << mamExo.getVeterinario() << ";" << mamExo.getTratador() << ";" << mamExo.getNomeBatismo() << ";"  << mamExo.getCorPelo() << ";" << mamExo.getAutorizacaoIBAMA() << ";" << mamExo.getPaisOrigem() << ";" << mamExo.getAutorizacao() << ";" << '\n';
+	return out;
+}
+
+
+// Escrevendo no arquivo "repteis_nat.txt".
+ofstream& operator << (ofstream &out, REPTIL_NATIVO &repNat){
+	out << repNat.getID() << ";" << repNat.getClasse() << ";" << repNat.getNomeAnimal() << ";" << repNat.getNomeCientifico() << ";" << repNat.getSexo() << ";" << repNat.getTamanho() << ";" << repNat.getDieta() << ";" << repNat.getVeterinario() << ";" << repNat.getTratador() << ";" << repNat.getNomeBatismo() << ";"  << repNat.getVenenoso() <<  ";" << repNat.getTipoVeneno()  << ";" << repNat.getAutorizacaoIBAMA() << ";" << repNat.getUFOrigem() << ";" << repNat.getAutorizacao() << ";" << '\n';
+	return out;
+}
+
+// Escrevendo no arquivo "repteis_ex.txt".
+ofstream& operator << (ofstream &out, REPTIL_EXOTICO &repExo){
+	out << repExo.getID() << ";" << repExo.getClasse() << ";" << repExo.getNomeAnimal() << ";" << repExo.getNomeCientifico() << ";" << repExo.getSexo() << ";" << repExo.getTamanho() << ";" << repExo.getDieta() << ";" << repExo.getVeterinario() << ";" << repExo.getTratador() << ";" << repExo.getNomeBatismo() << ";"  << repExo.getVenenoso() <<  ";" << repExo.getTipoVeneno()  << ";" << repExo.getAutorizacaoIBAMA() << ";" << repExo.getPaisOrigem() << ";" << repExo.getAutorizacao() << ";" << '\n';
+	return out;
+}
+
+
+//Escrevendo no arquivo "veterinarios.txt"
+ofstream& operator << (ofstream &out, VETERINARIO &vet){
+	out << vet.getID() << ";" << vet.getNome() << ";" <<vet.getCPF() << ";" <<vet.getIdade() << ";" <<vet.getTipoSanguineo() << ";" <<vet.getFatorRH() << ";" <<vet.getEspecialidade() << ";" <<vet.getCRMV() << ";" << '\n';
+	return out;
+}
+
+// Escrevendo no arquivo "tratadores.txt".
+ofstream& operator << (ofstream &out, TRATADOR &trat){
+	out << trat.getID() << ";" << trat.getNome() << ";" << trat.getCPF() << ";" << trat.getIdade() << ";" << trat.getTipoSanguineo() << ";" << trat.getFatorRH() << ";" << trat.getEspecialidade() << ";" << trat.getNivelDeSeguranca() << ";" << '\n';
+	return out;
+}
