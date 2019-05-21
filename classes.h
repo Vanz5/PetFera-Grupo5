@@ -121,7 +121,7 @@ using std::string;
 
 			// GETTERS
 
-			int getID () = 0;
+			virtual int getID () = 0;
 			string getClasse ();
 			string getNomeAnimal ();
 			string getNomeCientifico ();
