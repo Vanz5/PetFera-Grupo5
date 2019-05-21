@@ -90,6 +90,7 @@ using std::string;
 		protected:
 			int id;
 			string classe;
+			string nome_animal;
 			string nome_cientifico;
 			char sexo;
 			double tamanho;
@@ -104,6 +105,7 @@ using std::string;
 
 			void setID (int _id);
 			void setClasse (string _classe);
+			void setNomeAnimal (string _nome_animal);
 			void setNomeCientifico (string _nome_cientifico);
 			void setSexo (char _sexo);
 			void setTamanho (double _tamanho);
@@ -116,6 +118,7 @@ using std::string;
 
 			int getID () = 0;
 			string getClasse ();
+			string getNomeAnimal ();
 			string getNomeCientifico ();
 			char getSexo ();
 			double getTamanho ();
@@ -126,7 +129,7 @@ using std::string;
 
 			// CONSTRUTORES E DESTRUTOR
 
-			Animal (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo);
+			Animal (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo);
 			~Animal ();
 	};
 
@@ -212,19 +215,19 @@ using std::string;
 
 			// CONSTRUTORES E DESTRUTOR
 
-			Anfibio (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda);
+			Anfibio (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda);
 			~Anfibio ();
 	};
 
 	class AnfibioNativo : public Anfibio, AnimalNativo {
 		public:
-			AnfibioNativo (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda, string _autorizacao_ibama, string _uf_origem, string _autorizacao);
+			AnfibioNativo (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda, string _autorizacao_ibama, string _uf_origem, string _autorizacao);
 			~AnfibioNativo ();
 	};
 
 	class AnfibioExotico : public Anfibio, AnimalExotico {
 		public:
-			AnfibioExotico (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda, string _autorizacao_ibama, string _pais_origem);
+			AnfibioExotico (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda, string _autorizacao_ibama, string _pais_origem);
 			~AnfibioExotico ();
 	};
 
@@ -249,19 +252,19 @@ using std::string;
 
 			// CONSTRUTORES E DESTRUTOR
 
-			Ave (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo);
+			Ave (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo);
 			~Ave ();
 	};
 
 	class AveNativo : public Ave, AnimalNativo {
 		public:
-			AveNativo (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, double _tamanho_do_bico_cm, double _envergadura_das_asas, string _autorizacao_ibama, string _uf_origem, string _autorizacao);
+			AveNativo (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, double _tamanho_do_bico_cm, double _envergadura_das_asas, string _autorizacao_ibama, string _uf_origem, string _autorizacao);
 			~AveNativo ();
 	};
 
 	class AveExotico : public Ave, AnimalExotico {
 		public:
-			AveExotico (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, double _tamanho_do_bico_cm, double _envergadura_das_asas, string _autorizacao_ibama, string _pais_origem);
+			AveExotico (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, double _tamanho_do_bico_cm, double _envergadura_das_asas, string _autorizacao_ibama, string _pais_origem);
 			~AveExotico ();
 	};
 
@@ -283,19 +286,19 @@ using std::string;
 
 			// CONSTRUTORES E DESTRUTOR	
 
-			Mamifero (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo);
+			Mamifero (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo);
 			~Mamifero ();
 	};
 
 	class MamiferoNativo : public Mamifero, AnimalNativo {
 		public:
-			MamiferoNativo (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, string _cor_pelo, string _autorizacao_ibama, string _uf_origem, string _autorizacao);
+			MamiferoNativo (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, string _cor_pelo, string _autorizacao_ibama, string _uf_origem, string _autorizacao);
 			~MamiferoNativo ();
 	};
 
 	class MamiferoExotico : public Mamifero, AnimalExotico {
 		public:
-			MamiferoExotico (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, string _cor_pelo, string _autorizacao_ibama, string _pais_origem);
+			MamiferoExotico (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, string _cor_pelo, string _autorizacao_ibama, string _pais_origem);
 			~MamiferoExotico ();
 	};
 
@@ -320,19 +323,19 @@ using std::string;
 
 			// CONSTRUTORES E DESTRUTOR
 
-			Reptil (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo);
+			Reptil (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo);
 			~Reptil ();
 	};
 
 	class ReptilNativo : public Reptil, AnimalNativo {
 		public:
-			ReptilNativo (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, bool _venenoso, string _tipo_veneno, string _autorizacao_ibama, string _uf_origem, string _autorizacao);
+			ReptilNativo (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, bool _venenoso, string _tipo_veneno, string _autorizacao_ibama, string _uf_origem, string _autorizacao);
 			~ReptilNativo ();
 	};
 
 	class ReptilExotico : public Reptil, AnimalExotico {
 		public:
-			ReptilExotico (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, bool _venenoso, string _tipo_veneno, string _autorizacao_ibama, string _pais_origem);
+			ReptilExotico (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, bool _venenoso, string _tipo_veneno, string _autorizacao_ibama, string _pais_origem);
 			~ReptilExotico ();
 	};
 

@@ -150,6 +150,10 @@
 		strcpy (classe, _classe);
 	}
 
+	void setNomeAnimal (string _nome_animal) {
+		strcpy (nome_animal, _nome_animal);
+	}
+
 	void setNomeCientifico (string _nome_cientifico) {
 		strcpy (nome_cientifico, _nome_cientifico);
 	}
@@ -184,6 +188,10 @@
 		return classe;
 	}
 
+	string getNomeAnimal () {
+		return nome_animal;
+	}
+
 	string getNomeCientifico () {
 		return nome_cientifico;
 	}
@@ -214,9 +222,10 @@
 
 	// CONSTRUTOR E DESTRUTOR
 
-	Animal::Animal (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo) {
+	Animal::Animal (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo) {
 		id = _id;
 		strcpy (classe, _classe);
+		strcpy (nome_animal, _nome_animal);
 	 	strcpy (nome_cientifico, _nome_cientifico);
 	 	sexo = _sexo;
 	 	tamanho = _tamanho;
@@ -330,9 +339,10 @@
 
 	// CONSTRUTOR E DESTRUTOR
 
-	Anfibio::Anfibio (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda) {
+	Anfibio::Anfibio (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda) {
 		id = _id;
 		strcpy (classe, _classe);
+		strcpy (nome_animal, _nome_animal);
 	 	strcpy (nome_cientifico, _nome_cientifico);
 	 	sexo = _sexo;
 	 	tamanho = _tamanho;
@@ -348,9 +358,10 @@
 
 // ANFÍBIO NATIVO
 
-	AnfibioNativo::AnfibioNativo (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda, string _autorizacao_ibama, string _uf_origem, string _autorizacao) {
+	AnfibioNativo::AnfibioNativo (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda, string _autorizacao_ibama, string _uf_origem, string _autorizacao) {
 		id = _id;
 		strcpy (classe, _classe);
+		strcpy (nome_animal, _nome_animal);
 	 	strcpy (nome_cientifico, _nome_cientifico);
 	 	sexo = _sexo;
 	 	tamanho = _tamanho;
@@ -369,9 +380,10 @@
 
 // ANFÍBIO EXÓTICO
 
-	AnfibioExotico::AnfibioExotico (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda, string _autorizacao_ibama, string _pais_origem) {
+	AnfibioExotico::AnfibioExotico (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda, string _autorizacao_ibama, string _pais_origem) {
 		id = _id;
 		strcpy (classe, _classe);
+		strcpy (nome_animal, _nome_animal);
 	 	strcpy (nome_cientifico, _nome_cientifico);
 	 	sexo = _sexo;
 	 	tamanho = _tamanho;
@@ -411,9 +423,10 @@
 
 	// CONSTRUTOR E DESTRUTOR
 
-	Ave::Ave (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, double _tamanho_do_bico_cm, double _envergadura_das_asas) {
+	Ave::Ave (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, double _tamanho_do_bico_cm, double _envergadura_das_asas) {
 		id = _id;
 		strcpy (classe, _classe);
+		strcpy (nome_animal, _nome_animal);
 	 	strcpy (nome_cientifico, _nome_cientifico);
 	 	sexo = _sexo;
 	 	tamanho = _tamanho;
@@ -429,9 +442,10 @@
 
 // AVE NATIVO
 
-	AveNativo::AveNativo (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, double _tamanho_do_bico_cm, double _envergadura_das_asas, string _autorizacao_ibama, string _uf_origem, string _autorizacao) {
+	AveNativo::AveNativo (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, double _tamanho_do_bico_cm, double _envergadura_das_asas, string _autorizacao_ibama, string _uf_origem, string _autorizacao) {
 		id = _id;
 		strcpy (classe, _classe);
+		strcpy (nome_animal, _nome_animal);
 	 	strcpy (nome_cientifico, _nome_cientifico);
 	 	sexo = _sexo;
 	 	tamanho = _tamanho;
@@ -450,9 +464,10 @@
 	
 // AVE EXÓTICO
 
-	AveExotico::AveExotico (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, double _tamanho_do_bico_cm, double _envergadura_das_asas, string _autorizacao_ibama, string _pais_origem) {
+	AveExotico::AveExotico (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, double _tamanho_do_bico_cm, double _envergadura_das_asas, string _autorizacao_ibama, string _pais_origem) {
 		id = _id;
 		strcpy (classe, _classe);
+		strcpy (nome_animal, _nome_animal);
 	 	strcpy (nome_cientifico, _nome_cientifico);
 	 	sexo = _sexo;
 	 	tamanho = _tamanho;
@@ -484,9 +499,10 @@
 
 	// CONSTRUTOR E DESTRUTOR
 
-	Mamifero::Mamifero (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, string _cor_pelo) {
+	Mamifero::Mamifero (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, string _cor_pelo) {
 		id = _id;
 		strcpy (classe, _classe);
+		strcpy (nome_animal, _nome_animal);
 	 	strcpy (nome_cientifico, _nome_cientifico);
 	 	sexo = _sexo;
 	 	tamanho = _tamanho;
@@ -501,9 +517,10 @@
 
 // MAMÍFERO NATIVO
 
-	MamiferoNativo::MamiferoNativo (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, string _cor_pelo, string _autorizacao_ibama, string _uf_origem, string _autorizacao) {
+	MamiferoNativo::MamiferoNativo (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, string _cor_pelo, string _autorizacao_ibama, string _uf_origem, string _autorizacao) {
 		id = _id;
 		strcpy (classe, _classe);
+		strcpy (nome_animal, _nome_animal);
 	 	strcpy (nome_cientifico, _nome_cientifico);
 	 	sexo = _sexo;
 	 	tamanho = _tamanho;
@@ -521,9 +538,10 @@
 
 // MAMÍFERO EXÓTICO
 
-	MamiferoExotico::MamiferoExotico (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, string _cor_pelo, string _autorizacao_ibama, string _pais_origem) {
+	MamiferoExotico::MamiferoExotico (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, string _cor_pelo, string _autorizacao_ibama, string _pais_origem) {
 		id = _id;
 		strcpy (classe, _classe);
+		strcpy (nome_animal, _nome_animal);
 	 	strcpy (nome_cientifico, _nome_cientifico);
 	 	sexo = _sexo;
 	 	tamanho = _tamanho;
@@ -562,9 +580,10 @@
 
 	// CONSTRUTOR E DESTRUTOR
 
-	Reptil::Reptil (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, bool _venenoso, string _tipo_veneno) {
+	Reptil::Reptil (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, bool _venenoso, string _tipo_veneno) {
 		id = _id;
 		strcpy (classe, _classe);
+		strcpy (nome_animal, _nome_animal);
 	 	strcpy (nome_cientifico, _nome_cientifico);
 	 	sexo = _sexo;
 	 	tamanho = _tamanho;
@@ -580,9 +599,10 @@
 
 // RÉPTIL NATIVO
 
-	ReptilNativo::ReptilNativo (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, bool _venenoso, string _tipo_veneno, string _autorizacao_ibama, string _uf_origem, string _autorizacao) {
+	ReptilNativo::ReptilNativo (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, bool _venenoso, string _tipo_veneno, string _autorizacao_ibama, string _uf_origem, string _autorizacao) {
 		id = _id;
 		strcpy (classe, _classe);
+		strcpy (nome_animal, _nome_animal);
 	 	strcpy (nome_cientifico, _nome_cientifico);
 	 	sexo = _sexo;
 	 	tamanho = _tamanho;
@@ -601,9 +621,10 @@
 
 // RÉPTIL EXÓTICO
 
-	ReptilExotico::ReptilExotico (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, bool _venenoso, string _tipo_veneno, string _autorizacao_ibama, string _pais_origem) {
+	ReptilExotico::ReptilExotico (int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, bool _venenoso, string _tipo_veneno, string _autorizacao_ibama, string _pais_origem) {
 		id = _id;
 		strcpy (classe, _classe);
+		strcpy (nome_animal, _nome_animal);
 	 	strcpy (nome_cientifico, _nome_cientifico);
 	 	sexo = _sexo;
 	 	tamanho = _tamanho;
