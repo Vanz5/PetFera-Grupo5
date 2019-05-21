@@ -184,6 +184,10 @@
 
 	// GETTERS
 
+	string getID () {
+		return id;
+	}
+
 	string getClasse () {
 		return classe;
 	}
