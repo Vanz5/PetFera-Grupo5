@@ -4,7 +4,7 @@
 
 //Cadastro geral de animais - Todos os tipos precisam passar por aqui
 //Inicialmente deixei como vector no geral e nos especificos, possivel mudança pra map
-void CadastrarAnimal(vector <anfibio_nativo> &anfNat, vector <anfibio_exotico> &anfExo, vector <ave_nativo> &aveNat, vector <ave_exotico> &aveExo, vector <mamifero_nativo> &mamNat, vector <mamifero_exotico> &mamExo, vector <reptil_nativo> &repNat, vector <reptil_exotico> &repExo ){ //adaptar para maps de animais
+void CadastrarAnimal(map<int,anfibio_nativo> &anfNat, map<int, anfibio_exotico> &anfExo, map<int, ave_nativo> &aveNat, map<int, ave_exotico> &aveExo, map<int,mamifero_nativo> &mamNat, map<int,mamifero_exotico> &mamExo, map<int,reptil_nativo> &repNat, map<int,reptil_exotico> &repExo){ //adaptar para maps de animais
 	int tipoAnimal;
 	char cont = 's', resposta;
 
@@ -15,7 +15,7 @@ void CadastrarAnimal(vector <anfibio_nativo> &anfNat, vector <anfibio_exotico> &
 		if(tipoAnimal !=1 && tipoAnimal !=2 && tipoAnimal !=3 && tipoAnimal !=4){
 			cout<<"Tipo de animal incorreto! \n"<<endl;
 			cout<<"\n s - Para sair do cadastro \n Aperte qualquer outra tecla para recomeçar o cadastro de animal"<<endl;
-			cin>>resp;
+			cin>>resposta;
 			if(resp == 's'){
 				cont = 'n';
 				break;
@@ -41,7 +41,7 @@ void CadastrarAnimal(vector <anfibio_nativo> &anfNat, vector <anfibio_exotico> &
 }
 
 //Função especifica para cadastro de anfibios
-void cadastrar(vector <anfibio_nativo> &anfNat, vector <anfibio_exotico> &anfExo){
+void cadastrar((map<int, anfibio_nativo> &anfNat, map<int, anfibio_exotico> &anfExo){
 	int id, totalMudas, ultimaMuda [3], tipoAnimal;
 	string classe, nomeAnimal,nomeCientifico, dieta, veterinario, tratador, nomeBatismo, autorizacao, autorizacaoIBAMA, origem;
 	char sexo, cont = 's';
@@ -97,6 +97,8 @@ void cadastrar(vector <anfibio_nativo> &anfNat, vector <anfibio_exotico> &anfExo
 				cout<<"Insira a autorizacao do animal:"<<endl;
 				getline(cin,autorizacao);
 
+				anfNat.insert(pair<int, anfibio_nativo>(id, anfibio_nativo(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, totalMudas, ultimaMuda[], autorizacaoIBAMA, origem, autorizacao)));
+				
 				//Armazenar pelo map - pesquisar
 
 				/* teste se o cadastro foi feito
@@ -112,9 +114,11 @@ void cadastrar(vector <anfibio_nativo> &anfNat, vector <anfibio_exotico> &anfExo
 
 				cout<<"Insira o País de origem:"<<endl;
 				getline(cin,origem);
-				cout<<"Insira a autorizacao do animal:"<<endl;
-				getline(cin,autorizacao);
+				//cout<<"Insira a autorizacao do animal:"<<endl;
+				//getline(cin,autorizacao);
 
+				anfExo.insert(pair<int, anfibio_exotico>(id, anfibio_exotico(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, totalMudas, ultimaMuda[], autorizacaoIBAMA, origem)));
+				
 				//Armazenar pelo map - pesquisar
 
 				/* teste se o cadastro foi feito
@@ -130,7 +134,7 @@ void cadastrar(vector <anfibio_nativo> &anfNat, vector <anfibio_exotico> &anfExo
 }
 
 //Função especifica para cadastro de aves
-void cadastrar(vector <ave_nativo> &aveNat, vector <ave_exotico> &aveExo){
+void cadastrar(map<int, ave_nativo> &aveNat, map<int, ave_exotico> &aveExo){
 	int id;
 	double tamBico, envergadura, tamanho;
 	string classe, nomeAnimal, nomeCientifico, dieta, veterinario, tratador, nomeBatismo, autorizacao, autorizacaoIBAMA, origem;
@@ -186,6 +190,8 @@ void cadastrar(vector <ave_nativo> &aveNat, vector <ave_exotico> &aveExo){
 				cout<<"Insira a autorizacao do animal:"<<endl;
 				getline(cin,autorizacao);
 
+				aveNat.insert(pair<int, ave_nativo> (id, ave_nativo(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, tamBico, envergadura, autorizacaoIBAMA, origem, autorizacao)));
+	
 				//Armazenar pelo map - pesquisar
 
 				/* teste se o cadastro foi feito
@@ -201,9 +207,11 @@ void cadastrar(vector <ave_nativo> &aveNat, vector <ave_exotico> &aveExo){
 
 				cout<<"Insira o País de origem:"<<endl;
 				getline(cin,origem);
-				cout<<"Insira a autorizacao do animal:"<<endl;
-				getline(cin,autorizacao);
+				//cout<<"Insira a autorizacao do animal:"<<endl;
+				//getline(cin,autorizacao);
 
+				aveExo.insert(pair<int,ave_exotico>(id, ave_exotico(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, tamBico, envergadura, autorizacaoIBAMA, origem)));
+				
 				//Armazenar pelo map - pesquisar
 
 				/* teste se o cadastro foi feito
@@ -218,7 +226,7 @@ void cadastrar(vector <ave_nativo> &aveNat, vector <ave_exotico> &aveExo){
 }
 
 //Função especifica para cadastro de mamiferos
-void cadastrar(vector <mamifero_nativo> &mamNat, vector <mamifero_exotico> &mamExo){
+void cadastrar(map<int, mamifero_nativo> &mamNat, map<int, mamifero_exotico> &mamExo){
 	int id;
 	double tamanho;
 	string classe, nomeAnimal, nomeCientifico, dieta, veterinario, tratador, nomeBatismo, autorizacao, autorizacaoIBAMA, origem, cor;
@@ -273,6 +281,8 @@ void cadastrar(vector <mamifero_nativo> &mamNat, vector <mamifero_exotico> &mamE
 				cout<<"Insira a autorizacao do animal:"<<endl;
 				getline(cin,autorizacao);
 
+				mamNat.insert(pair<int, mamifero_nativo>(id, mamifero_nativo(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, cor, autorizacaoIBAMA, origem, autorizacao)));
+				
 				//Armazenar pelo map - pesquisar
 
 				/* teste se o cadastro foi feito
@@ -288,9 +298,12 @@ void cadastrar(vector <mamifero_nativo> &mamNat, vector <mamifero_exotico> &mamE
 
 				cout<<"Insira o País de origem:"<<endl;
 				getline(cin,origem);
-				cout<<"Insira a autorizacao do animal:"<<endl;
-				getline(cin,autorizacao);
+				//cout<<"Insira a autorizacao do animal:"<<endl;
+				//getline(cin,autorizacao);
 
+				mamExo.insert(pair<int, mamifero_exotico>(id, mamifero_exotico(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, cor, autorizacaoIBAMA, origem)));
+				
+				
 				//Armazenar pelo map - pesquisar
 
 				/* teste se o cadastro foi feito
@@ -306,7 +319,7 @@ void cadastrar(vector <mamifero_nativo> &mamNat, vector <mamifero_exotico> &mamE
 
 
 //Função especifica para cadastro de Repteis
-void cadastrar(vector <reptil_nativo> &repNat, vector <reptil_exotico> &repExo){
+void cadastrar(map<int, reptil_nativo> &repNat, map<int, reptil_exotico> &repExo){
 	int id;
 	bool venenoso;
 	double tamanho;
@@ -365,6 +378,8 @@ void cadastrar(vector <reptil_nativo> &repNat, vector <reptil_exotico> &repExo){
 				cout<<"Insira a autorizacao do animal:"<<endl;
 				getline(cin,autorizacao);
 
+				repNat.insert(pair<int, reptil_nativo>(id,reptil_nativo(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, autorizacaoIBAMA, venenoso, tipoVeneno, origem, autorizacao)));
+				
 				//Armazenar pelo map - pesquisar
 
 				/* teste se o cadastro foi feito
@@ -380,8 +395,10 @@ void cadastrar(vector <reptil_nativo> &repNat, vector <reptil_exotico> &repExo){
 
 				cout<<"Insira o País de origem:"<<endl;
 				getline(cin,origem);
-				cout<<"Insira a autorizacao do animal:"<<endl;
-				getline(cin,autorizacao);
+				//cout<<"Insira a autorizacao do animal:"<<endl;
+				//getline(cin,autorizacao);
+
+				repExo.insert(pair<int, reptil_exotico>(id, reptil_exotico(id, classe, nomeAnimal, nomeCientifico, sexo, tamanho, dieta, veterinario, tratador, nomeBatismo, autorizacaoIBAMA, venenoso, tipoVeneno, origem)));
 
 				//Armazenar pelo map - pesquisar
 
@@ -401,7 +418,7 @@ void cadastrar(vector <reptil_nativo> &repNat, vector <reptil_exotico> &repExo){
 //Função geral
 
 //adaptar para map
-void cadastrarFuncionario (map veterinario, map tratador){
+void cadastrarFuncionario (map <int, Veterinarios> &veterinarios, map <int, Tratadores> &tratadores){
 	int tipoFuncionario;
 	char cont = 's';
 
@@ -426,7 +443,7 @@ void cadastrarFuncionario (map veterinario, map tratador){
 
 //Função especifica para cadastro de Veterinarios
 
-void cadastrar(map veterinarios){
+void cadastrar(map <int, Veterinarios> &veterinarios){
 	int id,idade;
 	long int cpf;
 	string nome, especialidade, crmv, tipoSang;
@@ -460,11 +477,12 @@ void cadastrar(map veterinarios){
 
 			//Armazenar pelo map - pesquisar
 	}
+	veterinarios.insert(pair<int, veterinarios>(id, veterinarios(id, nome, cpf, idade, tipoSang, fatorRH, especialidade, crmv)))
 }
 
 //Função especifica para cadastro de Tratadores
 
-void cadastrar(map tratadores){
+void cadastrar( map <int, Tratadores> &tratadores){
 	int id,idade, nivelSeg;
 	long int cpf;
 	string nome, especialidade, tipoSang;
@@ -497,4 +515,5 @@ void cadastrar(map tratadores){
 
 			//Armazenar pelo map - pesquisar
 	}
+	tratadores.insert(pair<int, tratador>(id, tratador(id, nome cpf, idade, tipoSang, fatorRH, especialidade, nivelSeg)));
 }
