@@ -2,6 +2,7 @@
 #include <string>
 #include <map>
 #include <fstream>
+#include "classes.h"
 
 using namespace std;
 
