@@ -1,10 +1,13 @@
 #ifndef CLASSES_PETFERA
 #define CLASSES_PETFERA
 
+#include <iostream>
 #include <string>
+#include <map>
 #include <fstream>
+#include <ostream>
 
-using std::string;
+using namespace std;
 
 // CLASSES DOS FUNCIONÁRIOS (FUNCIONÁRIO, TRATADOR E VETERINÁRIO)
 
