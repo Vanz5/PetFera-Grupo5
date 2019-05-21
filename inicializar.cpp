@@ -1,4 +1,5 @@
 //Adicionar includes necessarios
+#include "classes.h"
 
 //Passa os dados dos arquivos.txt para seus respectivos maps
 
