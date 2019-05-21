@@ -6,21 +6,23 @@
 using namespace std;
 
 int menu(){
-
-	map <int,anfibio_nativo> anfNat;
-	map <int, anfibio_exotico> anfExo;
-
-	map <int, ave_nativo> aveNat;
-	map <int, ave_exotico> aveExo;
-
-	map <int,mamifero_nativo> mamNat;
-	map <int,mamifero_exotico> mamExo;
-
-	map <int,reptil_nativo> repNat;
-	map <int,reptil_exotico> repExo;
 	
-	map <int, Veterinarios> veterinarios;
-	map <int, Tratadores> tratadores;
+	map <int, Tratador> tratadores;
+	map <int, Veterinario> veterinarios;
+	
+	map <int, AnfibioNativo> anfNat;
+	map <int, AnfibioExotico> anfExo;
+
+	map <int, AveNativo> aveNat;
+	map <int, AveExotico> aveExo;
+
+	map <int, MamiferoNativo> mamNat;
+	map <int, MamiferoExotico> mamExo;
+
+	map <int, ReptilNativo> repNat;
+	map <int, ReptilExotico> repExo;
+	
+	
 
 	int opt;
 	cout << "\n************************** MENU ****************************" << endl;
