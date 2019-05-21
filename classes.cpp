@@ -314,10 +314,8 @@
 		total_de_mudas = _total_de_mudas;
 	}
 
-	void setUltimaMuda (int* _ultima_muda[]) {
-		for (int i = 0; i < 3; i++) {
-			ultima_muda[i] = _ultima_muda[i];
-		}
+	void setUltimaMuda (string _ultima_muda) {
+		strcpy (ultima_muda, _ultima_muda);
 	}
 
 	// GETTERS
@@ -326,13 +324,13 @@
 		return total_de_mudas;
 	}
 
-	int* getUltimaMuda () {
+	string getUltimaMuda () {
 		return ultima_muda;
 	}
 
 	// CONSTRUTOR E DESTRUTOR
 
-	Anfibio::Anfibio (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, int *_ultima_muda[]) {
+	Anfibio::Anfibio (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda) {
 		id = _id;
 		strcpy (classe, _classe);
 	 	strcpy (nome_cientifico, _nome_cientifico);
@@ -343,16 +341,14 @@
 	 	tratador = int _tratador;
 	 	strcpy (nome_batismo, _nome_batismo);
 	 	total_de_mudas = _total_de_mudas;
-	 	for (int i = 0; i < 3; i++) {
-			ultima_muda[i] = _ultima_muda[i];
-		}
+	 	strcpy (ultima_muda, _ultima_muda);
 	}
 
 	Anfibio::~Anfibio () {}
 
 // ANFÍBIO NATIVO
 
-	AnfibioNativo::AnfibioNativo (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, int *_ultima_muda[], string _autorizacao_ibama, string _uf_origem, string _autorizacao) {
+	AnfibioNativo::AnfibioNativo (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda, string _autorizacao_ibama, string _uf_origem, string _autorizacao) {
 		id = _id;
 		strcpy (classe, _classe);
 	 	strcpy (nome_cientifico, _nome_cientifico);
@@ -363,9 +359,7 @@
 	 	tratador = int _tratador;
 	 	strcpy (nome_batismo, _nome_batismo);
 	 	total_de_mudas = _total_de_mudas;
-	 	for (int i = 0; i < 3; i++) {
-			ultima_muda[i] = _ultima_muda[i];
-		}
+	 	strcpy (ultima_muda, _ultima_muda);
 		strcpy (autorizacao_ibama, _autorizacao_ibama);
 		strcpy (uf_origem, _uf_origem);
 		strcpy (autorizacao, _autorizacao);
@@ -375,7 +369,7 @@
 
 // ANFÍBIO EXÓTICO
 
-	AnfibioExotico::AnfibioExotico (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, int *_ultima_muda[], string _autorizacao_ibama, string _pais_origem) {
+	AnfibioExotico::AnfibioExotico (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda, string _autorizacao_ibama, string _pais_origem) {
 		id = _id;
 		strcpy (classe, _classe);
 	 	strcpy (nome_cientifico, _nome_cientifico);
@@ -386,9 +380,7 @@
 	 	tratador = int _tratador;
 	 	strcpy (nome_batismo, _nome_batismo);
 	 	total_de_mudas = _total_de_mudas;
-	 	for (int i = 0; i < 3; i++) {
-			ultima_muda[i] = _ultima_muda[i];
-		}
+	 	strcpy (ultima_muda, _ultima_muda);
 		strcpy (autorizacao_ibama, _autorizacao_ibama);
 		strcpy (pais_origem, _pais_origem);
 	}

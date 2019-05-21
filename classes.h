@@ -196,35 +196,35 @@ using std::string;
 	class Anfibio : public Animal {
 		protected:
 			int total_de_mudas;
-			int ultima_muda[3];
+			string ultima_muda;
 
 		public:
 
 			// SETTERS
 
 			void setTotalDeMudas (int _total_de_mudas);
-			void setUltimaMuda (int* _ultima_muda[]);
+			void setUltimaMuda (string _ultima_muda);
 
 			// GETTERS
 
 			int getTotalDeMudas ();
-			int* getUltimaMuda ();
+			string getUltimaMuda ();
 
 			// CONSTRUTORES E DESTRUTOR
 
-			Anfibio (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, int *_ultima_muda[]);
+			Anfibio (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda);
 			~Anfibio ();
 	};
 
 	class AnfibioNativo : public Anfibio, AnimalNativo {
 		public:
-			AnfibioNativo (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, int *_ultima_muda[], string _autorizacao_ibama, string _uf_origem, string _autorizacao);
+			AnfibioNativo (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda, string _autorizacao_ibama, string _uf_origem, string _autorizacao);
 			~AnfibioNativo ();
 	};
 
 	class AnfibioExotico : public Anfibio, AnimalExotico {
 		public:
-			AnfibioExotico (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, int *_ultima_muda[], string _autorizacao_ibama, string _pais_origem);
+			AnfibioExotico (int _id, string _classe, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, int _total_de_mudas, string _ultima_muda, string _autorizacao_ibama, string _pais_origem);
 			~AnfibioExotico ();
 	};
 
