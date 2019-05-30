@@ -63,11 +63,8 @@ Veterinario::~Veterinario () {}
 
 
 // ANIMAL
-	// GETTERS
 
-	int Animal::getId() {
-		return id;
-	}
+	// GETTERS
 
 	string Animal::getClasse() {
 		return classe;
@@ -93,19 +90,11 @@ Veterinario::~Veterinario () {}
 		return dieta;
 	}
 
-	int Animal::getTratador() {
-		return tratador;
-	}
-
 	int Animal::getVeterinario() {
 		return veterinario;
 	}
 
-	Veterinario Animal::getVeterinario() {
-		return veterinario;
-	}
-
-	Tratador Animal::getTratador() {
+	int Animal::getTratador() {
 		return tratador;
 	}
 
@@ -113,37 +102,37 @@ Veterinario::~Veterinario () {}
 		return nome_batismo;
 	}
 
-	Animal::Animal(int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo){
-		id = _id;
-		classe = _classe;
-		nome_animal = _nome_animal;
-	 	nome_cientifico = _nome_cientifico;
-	 	sexo = _sexo;
-	 	tamanho = _tamanho;
-	 	dieta = _dieta;
-	 	veterinario = _veterinario;
-	 	tratador = _tratador;
-		nome_batismo = _nome_batismo;	
+	Animal::Animal(int i, string clas, string n, string ncientifico, char sex, double tam, string diet, int vet, int trat, string nbatismo){
+		this->id = i;
+		this->classe = clas;
+		this->nome_animal = n;
+		this->nome_cientifico = ncientifico;
+		this->sexo = sex;
+		this->tamanho = tam;
+		this->dieta = diet;
+		this->veterinario = vet;
+		this->tratador = trat;
+		this->nome_batismo = nbatismo;
 	}
 
-	Animal::~Animal(){
-
-	}
+	Animal::~Animal(){}
 
 
 // ANIMAL SILVESTRE
 
-	string AnimalSilvestre::getAutorizacaoIBAMA() {
-		return autorizacao_ibama;
+	// CONSTRUTOR E DESTRUTOR
+	AnimalSilvestre::AnimalSilvestre(string autIbama){
+		this->autorizacao_ibama = autIbama;
 	}
 
-	// CONSTRUTOR E DESTRUTOR
-	//Falta o construtor
-
-	AnimalSilvestre::~AnimalSilvestre() {}
+	AnimalSilvestre::~AnimalSilvestre(){}
 
 
 // ANIMAL NATIVO
+
+	int AnimalNativo::getId(){
+		return id;
+	}
 
 	string AnimalNativo::getUFOrigem() {
 		return uf_origem;
@@ -153,24 +142,40 @@ Veterinario::~Veterinario () {}
 		return autorizacao;
 	}
 
-	// CONSTRUTOR E DESTRUTOR
-	//Falta o construtor
-
-	AnimalNativo::~AnimalNativo(){
-
+	string AnimalNativo::getAutorizacaoIBAMA() {
+		return this->autorizacao_ibama;
 	}
+
+	// CONSTRUTOR E DESTRUTOR
+	AnimalNativo::AnimalNativo(int i, string clas, string n, string ncientifico, char sex, double tam, string diet, int vet, int trat, string nbatismo, string autIbama, string uf, string aut): Animal(i, clas, n,  ncientifico, sex, tam, diet, vet, trat, nbatismo), AnimalSilvestre(autIbama){
+		this->uf_origem = uf;
+		this->autorizacao = aut;
+	}
+
+	AnimalNativo::~AnimalNativo() {}
 
 // ANIMAL EXÓTICO
 
-	string AnimalExotico::getPaisOrigem () {
+	string AnimalExotico::getPaisOrigem(){
 		return pais_origem;
+	}
+
+	string AnimalExotico::getAutorizacao(){
+		return autorizacao;
+	}
+
+	string AnimalExotico::getAutorizacaoIBAMA(){
+		return this->autorizacao_ibama;
 	}
 
 	// CONSTRUTOR E DESTRUTOR
 
-	//AnimalExotico::AnimalExotico (string _autorizacao_ibama, string _pais_origem){}
+	AnimalExotico::AnimalExotico(int i, string clas, string n, string ncientifico, char sex, double tam, string diet, int vet, int trat, string nbatismo, string autIbama, string p, string a):Animal(i, clas, n,  ncientifico, sex, tam, diet, vet, trat, nbatismo), AnimalSilvestre(autIbama){
+		this->pais_origem = p;
+		this->autorizacao = a;
+	}
 
-	AnimalExotico::~AnimalExotico () {}	
+	AnimalExotico::~AnimalExotico(){}		
 
 // ANFÍBIO
 
@@ -286,4 +291,4 @@ Veterinario::~Veterinario () {}
 
 	//ReptilExotico::ReptilExotico(int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, bool _venenoso, string _tipo_veneno, string _autorizacao_ibama, string _pais_origem) {}
 
-ReptilExotico::~ReptilExotico () {}
+	ReptilExotico::~ReptilExotico () {}
