@@ -91,7 +91,7 @@ using namespace std;
 		public:
 			// GETTERS
 
-			int getId();
+			virtual int getId() = 0;
 			string getClasse();
 			string getNomeAnimal();
 			string getNomeCientifico();
@@ -104,51 +104,55 @@ using namespace std;
 
 			// CONSTRUTORES E DESTRUTOR
 
-			Animal(int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, string _nome_batismo);
+			Animal(int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo);
 			~Animal();
 	};
 
 	class AnimalSilvestre {
 		protected:
 			string autorizacao_ibama;
+
+		public:
+			virtual string getAutorizacaoIBAMA() = 0;
+
+			// CONSTRUTOR E DESTRUTOR
+			AnimalSilvestre(string _autorizacao_ibama);
+			~AnimalSilvestre();
+	};
+	
+	//class ANIMAL_NATIVO: public ANIMAL, ANIMAL_SILVESTRE{
+	class AnimalNativo: public Animal, AnimalSilvestre {
+		protected:
+			string uf_origem;
+			string autorizacao;
+
+		public:
+			// GETTERS
+			virtual int getId() = 0;
+			string getUFOrigem();
+			string getAutorizacao();
+			string getAutorizacaoIBAMA();
+
+			// CONSTRUTOR E DESTRUTOR
+			AnimalNativo(int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, string _autorizacao_ibama, string _uf_origem, string _autorizacao);
+			~AnimalNativo();
+	};
+
+	class AnimalExotico : public Animal, AnimalSilvestre{
+		protected:
+			string pais_origem;
+			string autorizacao;
+
 		public:
 			// GETTER
-
+			virtual int getId() = 0;
+			string getPaisOrigem();
+			string getAutorizacao();
 			string getAutorizacaoIBAMA();
 
 			// CONSTRUTOR E DESTRUTOR
 
-			//AnimalSilvestre(string _autorizacao_ibama);
-			~AnimalSilvestre();
-	};
-	
-
-	class AnimalNativo: public Animal, AnimalSilvestre{
-		protected:
-			string uf_origem;
-			string autorizacao;
-		public:
-			// GETTERS
-			string getUFOrigem();
-			string getAutorizacao();
-			
-
-			// CONSTRUTOR E DESTRUTOR
-			//AnimalNativo(int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, string _nome_batismo, string _autorizacao_ibama, string _uf_origem, string _autorizacao);
-			~AnimalNativo();
-	};
-
-	class AnimalExotico : public AnimalSilvestre{
-		protected:
-			string pais_origem;
-
-		public:
-			// GETTER
-			string getPaisOrigem();
-
-			// CONSTRUTOR E DESTRUTOR
-
-			//AnimalExotico(string _autorizacao_ibama, string _pais_origem);
+			AnimalExotico(int _id, string _classe, string _nome_animal, string _nome_cientifico, char _sexo, double _tamanho, string _dieta, int _veterinario, int _tratador, string _nome_batismo, string _autorizacao_ibama, string _pais_origem, string _autorizacao);
 			~AnimalExotico();
 	};
 	
