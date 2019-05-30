@@ -1,4 +1,5 @@
 #include "classes.h"
+#include "funcoes.h"
 
 int menu(){
 	
