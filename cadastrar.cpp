@@ -1,5 +1,6 @@
 //Adicionar includes necessarios
 #include "classes.h"
+#include "funcoes.h"
 
 // Cadastro de Animais
 
