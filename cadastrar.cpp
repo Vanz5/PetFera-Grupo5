@@ -5,8 +5,7 @@
 // Cadastro de Animais
 
 //Cadastro geral de animais - Todos os tipos precisam passar por aqui
-//Inicialmente deixei como vector no geral e nos especificos, possivel mudança pra map
-void CadastrarAnimal(map <int, AnfibioNativo> &anfNat, map <int, AnfibioExotico> &anfExo, map <int, AveNativo> &aveNat, map <int, AveExotico> &aveExo, map<int, MamiferoNativo> &mamNat, map <int, MamiferoExotico> &mamExo, map<int, ReptilNativo> &repNat, map<int, ReptilExotico> &repExo){ //adaptar para maps de animais
+void CadastrarAnimal(map <int, AnfibioNativo> &anfNat, map <int, AnfibioExotico> &anfExo, map <int, AveNativo> &aveNat, map <int, AveExotico> &aveExo, map<int, MamiferoNativo> &mamNat, map <int, MamiferoExotico> &mamExo, map<int, ReptilNativo> &repNat, map<int, ReptilExotico> &repExo){ 
 	int tipoAnimal;
 	char cont = 's', resposta;
 
@@ -69,10 +68,9 @@ void cadastrar(map <int, AnfibioNativo> &anfNat, map <int, AnfibioExotico> &anfE
 
 			cout<<"Insira o id:"<<endl;
 			cin>>id;
-			cout<<"Insira a classe:"<<endl;
-			cin.ignore();
-			getline(cin,classe);
+			classe = "Amphibia";
 			cout<<"Insira o nome do animal:"<<endl;
+			cin.ignore();
 			getline(cin,nomeAnimal);
 			cout<<"Insira o nome cientifico:"<<endl;
 			getline(cin,nomeCientifico);
@@ -167,10 +165,10 @@ void cadastrar(map <int, AveNativo> &aveNat, map <int, AveExotico> &aveExo){
 
 			cout<<"Insira o id:"<<endl;
 			cin>>id;
-			cout<<"Insira a classe:"<<endl;
+			classe = "Aves";
 			cin.ignore();
-			getline(cin,classe);
-			cout<<"Insira o nome do animal:"<<endl;
+			cout<<"Insira o nome do animal:"<<endl;			
+			cin.ignore();
 			getline(cin,nomeAnimal);
 			cout<<"Insira o nome cientifico:"<<endl;
 			getline(cin,nomeCientifico);
@@ -265,10 +263,9 @@ void cadastrar(map <int, MamiferoNativo> &mamNat, map<int, MamiferoExotico> &mam
 
 			cout<<"Insira o id:"<<endl;
 			cin>>id;
-			cout<<"Insira a classe:"<<endl;
-			cin.ignore();
-			getline(cin,classe);
+			classe = "Mammalia";
 			cout<<"Insira o nome do animal:"<<endl;
+			cin.ignore();
 			getline(cin,nomeAnimal);
 			cout<<"Insira o nome cientifico:"<<endl;
 			getline(cin,nomeCientifico);
@@ -364,10 +361,9 @@ void cadastrar(map <int, ReptilNativo> &repNat, map<int, ReptilExotico> &repExo)
 
 			cout<<"Insira o id:"<<endl;
 			cin>>id;
-			cout<<"Insira a classe:"<<endl;
-			cin.ignore();
-			getline(cin,classe);
+			classe = "Reptilia";
 			cout<<"Insira o nome do animal:"<<endl;
+			cin.ignore();
 			getline(cin,nomeAnimal);
 			cout<<"Insira o nome cientifico:"<<endl;
 			getline(cin,nomeCientifico);
